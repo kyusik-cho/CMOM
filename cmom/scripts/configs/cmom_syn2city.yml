@@ -1,0 +1,20 @@
+EXP_NAME: cmom_syn2city
+SOURCE: SynthiaSeq
+DATA_DIRECTORY_SOURCE: /mnt/hdd1/kscho/SynthiaSeq/SEQS-04-DAWN
+DATA_LIST_SOURCE: ../dataset/SynthiaSeq_list/train.txt
+### train on 12 classes and evaluate on 11 classes
+NUM_CLASSES: 12
+TRAIN:
+  flow_path_src: /mnt/hdd1/kscho/SynthiaSeq/estimated_optical_flow_synthia_train
+  DA_METHOD: CMOM
+  INFO_TARGET: ../dataset/CityscapesSeq_list/info_SynthiaSeq.json
+  SET_SOURCE: train
+  RESTORE_FROM: ../../pretrained_models/davsn_syn2city_pretrained.pth
+  INPUT_SIZE_SOURCE:
+    - 1280
+    - 640
+  pseudo_label_path: ../pseudo_label_syn2city
+TEST:
+  MODE: video_best
+  INFO_TARGET: ../dataset/CityscapesSeq_list/info_SynthiaSeq.json
+

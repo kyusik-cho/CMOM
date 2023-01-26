@@ -1,0 +1,15 @@
+EXP_NAME: cmom_viper2city
+SOURCE: Viper
+DATA_DIRECTORY_SOURCE: /mnt/hdd1/kscho/Viper
+DATA_LIST_SOURCE: ../dataset/Viper_list/train.txt
+NUM_CLASSES: 15
+TRAIN:
+  flow_path_src: /mnt/hdd1/kscho/Viper/estimated_optical_flow_viper_train
+  DA_METHOD: CMOM
+  INFO_TARGET: ../dataset/CityscapesSeq_list/info_Viper.json
+  INPUT_SIZE_SOURCE:
+    - 1280
+    - 720
+TEST:
+  MODE: video_best
+  INFO_TARGET: ../dataset/CityscapesSeq_list/info_Viper.json
