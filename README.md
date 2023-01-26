@@ -62,6 +62,13 @@ Download the [pre-trained models](https://drive.google.com/drive/folders/1BepeA0
 When training a model, you can start with either [DA-VSN pretrained model](https://github.com/Dayan-Guan/DA-VSN) or DeepLab ImageNet pretrained models.
 
 
+## Evaluation on Pretrained Models
+```bash
+python test.py --cfg configs/cmom_viper2city_pretrained.yml
+python test.py --cfg configs/cmom_syn2city_pretrained.yml
+```
+
+
 ## Train
 ```bash
 python train.py --cfg configs/cmom_viper2city.yml --tensorboard 
